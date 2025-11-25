@@ -1,0 +1,205 @@
+[
+    {
+        "nome": "Stardew Valley",
+        "descricao": "Um RPG de simulação de fazenda onde você herda uma antiga fazenda e começa uma nova vida. Cultive, pesque, minere e faça amizade com os habitantes da cidade.",
+        "ano": 2016,
+        "categorias": ["Simulação", "RPG", "Fazenda"],
+        "famoso": true,
+        "link": "https://www.stardewvalley.net/",
+        "imagem": "stardew valley.png",
+        "trailer": "https://www.youtube.com/embed/ot7uXNQskhs",
+        "steam_link": "https://store.steampowered.com/app/413150/Stardew_Valley/",
+        "precos": [
+            {
+                "loja": "Steam",
+                "preco": 24.99,
+                "preco_promocional": null,
+                "link_loja": "https://store.steampowered.com/app/413150/Stardew_Valley/"
+            }
+        ]
+    },
+    {
+        "nome": "Hollow Knight",
+        "descricao": "Explore um vasto reino em ruínas de insetos e heróis. Uma aventura de ação 2D clássica com combate desafiador e uma história profunda.",
+        "ano": 2017,
+        "categorias": ["Aventura", "Ação", "Metroidvania"],
+        "famoso": true,
+        "link": "https://www.hollowknight.com/",
+        "imagem": "hollow_knight.png",
+        "trailer": "https://www.youtube.com/embed/UAO2urG23S4",
+        "steam_link": "https://store.steampowered.com/app/367520/Hollow_Knight/",
+        "precos": [
+            {
+                "loja": "Steam",
+                "preco": 46.99,
+                "preco_promocional": null,
+                "link_loja": "https://store.steampowered.com/app/367520/Hollow_Knight/"
+            },
+            {
+                "loja": "Nuuvem",
+                "preco": 46.99,
+                "preco_promocional": null,
+                "link_loja": "https://www.nuuvem.com/br-pt/item/hollow-knight"
+            }
+        ]
+    },
+    {
+        "nome": "Celeste",
+        "descricao": "Um jogo de plataforma sobre escalar uma montanha. Ajude Madeline a sobreviver a seus demônios internos em sua jornada para o topo da Montanha Celeste.",
+        "ano": 2018,
+        "categorias": ["Plataforma", "Aventura"],
+        "famoso": true,
+        "link": "https://www.celestegame.com/",
+        "imagem": "celeste.png",
+        "trailer": "https://www.youtube.com/embed/70d9irlxiB4",
+        "steam_link": "https://store.steampowered.com/app/504230/Celeste/",
+        "precos": [
+            {
+                "loja": "Steam",
+                "preco": 36.99,
+                "preco_promocional": null,
+                "link_loja": "https://store.steampowered.com/app/504230/Celeste/"
+            }
+        ]
+    },
+    {
+        "nome": "Hades",
+        "descricao": "Desafie o deus dos mortos enquanto você batalha para fugir do Submundo da mitologia grega neste roguelike dos criadores de Bastion e Transistor.",
+        "ano": 2020,
+        "categorias": ["Roguelike", "Ação", "RPG"],
+        "famoso": true,
+        "link": "https://www.supergiantgames.com/games/hades/",
+        "imagem": "hades.png",
+        "trailer": "https://www.youtube.com/embed/91t0ha6gafg",
+        "steam_link": "https://store.steampowered.com/app/1145360/Hades/",
+        "precos": [
+            {
+                "loja": "Steam",
+                "preco": 73.99,
+                "preco_promocional": null,
+                "link_loja": "https://store.steampowered.com/app/1145360/Hades/"
+            },
+            {
+                "loja": "Epic Games",
+                "preco": 73.99,
+                "preco_promocional": null,
+                "link_loja": "https://store.epicgames.com/p/hades"
+            }
+        ]
+    },
+    {
+        "nome": "Undertale",
+        "descricao": "Um RPG onde você não precisa destruir ninguém. Explore um mundo subterrâneo cheio de monstros e decida seu destino através de um sistema de batalha único.",
+        "ano": 2015,
+        "categorias": ["RPG"],
+        "famoso": true,
+        "link": "https://undertale.com/",
+        "imagem": "undertale.png",
+        "trailer": "https://www.youtube.com/embed/1Hojv0m3TqA",
+        "steam_link": "https://store.steampowered.com/app/391540/Undertale/",
+        "precos": [
+            {
+                "loja": "Steam",
+                "preco": 20.00,
+                "preco_promocional": null,
+                "link_loja": "https://store.steampowered.com/app/391540/Undertale/"
+            }
+        ]
+    },
+    {
+        "nome": "Cuphead",
+        "descricao": "Um jogo de ação e plataforma com foco em batalhas de chefes, inspirado em desenhos animados da década de 1930. Jogue como Cuphead ou Mugman.",
+        "ano": 2017,
+        "categorias": ["Ação", "Plataforma"],
+        "famoso": true,
+        "link": "https://studiomdhr.com/",
+        "imagem": "cuphead_capa.png",
+        "trailer": "https://www.youtube.com/embed/NN-9SQXoi50",
+        "steam_link": "https://store.steampowered.com/app/268910/Cuphead/",
+        "precos": [
+            {
+                "loja": "Steam",
+                "preco": 36.99,
+                "preco_promocional": null,
+                "link_loja": "https://store.steampowered.com/app/268910/Cuphead/"
+            }
+        ]
+    },
+    {
+        "nome": "Disco Elysium",
+        "descricao": "Um RPG de mundo aberto inovador. Você é um detetive com um sistema de habilidades único à sua disposição e um quarteirão inteiro para desbravar. Torne-se um herói ou um desastre absoluto de ser humano.",
+        "ano": 2019,
+        "categorias": ["RPG", "Mundo Aberto"],
+        "famoso": false,
+        "link": "https://zaumstudio.com/",
+        "imagem": "disco_elysium.png",
+        "trailer": "https://www.youtube.com/embed/nk_K5DM0UTk",
+        "steam_link": "https://store.steampowered.com/app/632470/Disco_Elysium__The_Final_Cut/",
+        "precos": [
+            {
+                "loja": "Steam",
+                "preco": 75.49,
+                "preco_promocional": null,
+                "link_loja": "https://store.steampowered.com/app/632470/Disco_Elysium__The_Final_Cut/"
+            }
+        ]
+    },
+    {
+        "nome": "Outer Wilds",
+        "descricao": "Um mistério de mundo aberto sobre um sistema solar preso em um loop temporal infinito. Explore planetas cheios de segredos antes que o sol se transforme em supernova.",
+        "ano": 2019,
+        "categorias": ["Aventura", "Exploração", "Mistério"],
+        "famoso": false,
+        "link": "https://www.mobiusdigitalgames.com/outer-wilds.html",
+        "imagem": "outer_wilds.png",
+        "trailer": "https://www.youtube.com/embed/d6LGnVCL1_A",
+        "steam_link": "https://store.steampowered.com/app/753640/Outer_Wilds/",
+        "precos": [
+            {
+                "loja": "Steam",
+                "preco": 73.99,
+                "preco_promocional": null,
+                "link_loja": "https://store.steampowered.com/app/753640/Outer_Wilds/"
+            }
+        ]
+    },
+    {
+        "nome": "Shovel Knight",
+        "descricao": "Um jogo de ação e aventura clássico com jogabilidade incrível, personagens memoráveis e uma estética retrô de 8 bits. Jogue como o Cavaleiro da Pá em uma missão para derrotar a Feiticeira.",
+        "ano": 2014,
+        "categorias": ["Ação", "Aventura", "Plataforma", "Retrô"],
+        "famoso": false,
+        "link": "https://yachtclubgames.com/shovel-knight/",
+        "imagem": "shovel_knight.png",
+        "trailer": "https://www.youtube.com/embed/ADbJk0u-b3k",
+        "steam_link": "https://store.steampowered.com/app/250760/Shovel_Knight_Treasure_Trove/",
+        "precos": [
+            {
+                "loja": "Steam",
+                "preco": 72.99,
+                "preco_promocional": null,
+                "link_loja": "https://store.steampowered.com/app/250760/Shovel_Knight_Treasure_Trove/"
+            }
+        ]
+    },
+    {
+        "nome": "OneShot",
+        "descricao": "Um jogo surreal de quebra-cabeça e aventura com mecânicas únicas. Guie uma criança por um mundo misterioso em uma missão para restaurar seu sol há muito morto, em um jogo que sabe que você existe.",
+        "ano": 2016,
+        "categorias": ["Aventura", "Quebra-cabeça"],
+        "famoso": false,
+        "link": "http://oneshot-game.com/",
+        "imagem": "oneshot.png",
+        "trailer": "https://www.youtube.com/embed/e_i7Ld_0s2k",
+        "steam_link": "https://store.steampowered.com/app/420530/OneShot/",
+        "precos": [
+            {
+                "loja": "Steam",
+                "preco": 19.99,
+                "preco_promocional": null,
+                "link_loja": "https://store.steampowered.com/app/420530/OneShot/"
+            }
+        ]
+    }
+    
+]

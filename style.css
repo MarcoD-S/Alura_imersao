@@ -1,0 +1,631 @@
+html {
+    scroll-behavior: smooth; /* Habilita a rolagem suave para todo o documento */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600&family=Russo+One&display=swap'); /* Importa as fontes Russo One e Exo 2 */
+
+* {
+    box-sizing: border-box; /* Garante que padding e border não aumentem o tamanho total do elemento. */
+}
+
+:root {
+    --primary-color: #9f7aea; /* Roxo vibrante para destaques */
+    --secondary-color: #e9d8fd; /* Lavanda claro para texto principal */
+    --tertiary-color: #a0aec0; /* Cinza azulado para texto secundário */
+    --bg-color: #1a202c; /* Azul muito escuro, quase preto */
+    --border-color: #2d3748; /* Azul acinzentado para bordas */
+}
+
+body {
+    margin: 0; /* Remove a margem padrão do body. */
+    background: var(--bg-color); /* Define a cor de fundo usando uma variável. */
+    color: var(--secondary-color); /* Define a cor do texto padrão usando uma variável. */
+    font-family: 'Exo 2', sans-serif; /* Define a família da fonte para o corpo do texto. */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Estilização da Barra de Rolagem */
+::-webkit-scrollbar {
+    width: 12px; /* Largura da barra de rolagem */
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-color); /* Cor do trilho, a mesma do fundo */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color); /* Cor do polegar (a parte móvel) */
+    border-radius: 20px; /* Bordas arredondadas */
+    border: 3px solid var(--bg-color); /* Cria um espaçamento ao redor do polegar */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #b197fc; /* Roxo um pouco mais claro ao passar o mouse */
+}
+
+header {
+    padding: 2rem 1rem; /* Espaçamento interno (2rem em cima/baixo, 1rem nos lados). */
+    display: flex; /* Habilita o layout flexbox. */
+    align-items: center; /* Alinha os itens verticalmente ao centro. */
+    justify-content: space-around; /* Distribui os itens com espaço ao redor. */
+    position: sticky; /* Mantém o cabeçalho fixo no topo ao rolar a página. */
+    top: 0; /* Posição do topo quando sticky. */
+    background: var(--bg-color); /* Cor de fundo do cabeçalho. */
+    z-index: 10; /* Define a ordem de empilhamento para ficar sobre outros elementos. */
+    border-bottom: 1px solid var(--border-color); /* Adiciona uma borda inferior. */
+    gap: 1rem; /* Espaçamento entre os elementos flex. */
+}
+
+/* Container da busca para melhor controle */
+header .search-container {
+    display: flex;
+    width: 100%;
+    max-width: 500px; /* Limita a largura em telas grandes */
+}
+header h1 {
+    font-family: 'Press Start 2P', cursive; /* Fonte temática de jogos, divertida e legível */
+    font-size: 1.8rem; /* Tamanho ajustado para a nova fonte */
+    color: #FFFFFF; /* Cor branca para contraste */
+    text-shadow: 0 0 8px var(--primary-color); /* Efeito de brilho (glow) sutil e profissional */
+    margin: 0; /* Remove a margem padrão. */
+}
+
+header .search-container input {
+    padding: 0.375rem 0.75rem; /* Espaçamento interno. */
+    border-radius: 1rem; /* Arredonda as bordas. */
+    border: 1px solid var(--tertiary-color); /* Define a borda. */
+    background: var(--bg-color); /* Cor de fundo. */
+    font-family: inherit; /* Herda a família da fonte do elemento pai. */
+    font-size: 1.2rem; /* Tamanho da fonte. */
+    transition: all 0.2s ease; /* Adiciona uma transição suave. */
+    width: 100%; /* Ocupa todo o espaço disponível no container */
+    color: var(--secondary-color); /* Cor do texto digitado. */
+    margin-right: .5rem; /* Margem à direita. */
+}
+
+div input::placeholder {
+    font-size: 1rem; /* Tamanho da fonte do placeholder. */
+    font-weight: 300; /* Peso da fonte do placeholder. */
+    color: var(--tertiary-color); /* Cor do texto do placeholder. */
+}
+
+header .search-container input:focus {
+    outline: none; /* Remove a borda de foco padrão. */
+    border-color: var(--primary-color); /* Muda a cor da borda ao focar. */
+    box-shadow: 0 0 0 0.1rem var(--primary-color); /* Adiciona uma sombra de caixa para indicar foco. */
+}
+
+#botao-busca {
+    padding: 0.8rem 1.5rem; /* Espaçamento interno. */
+    border-radius: 1rem; /* Arredonda as bordas. */
+    border: none; /* Remove a borda padrão. */
+    cursor: pointer; /* Muda o cursor para uma mão ao passar por cima. */
+    font-family: inherit; /* Herda a família da fonte. */
+    font-weight: 500; /* Peso da fonte. */
+    font-size: 1rem; /* Tamanho da fonte. */
+    white-space: nowrap; /* Impede a quebra de linha do texto. */
+    transition: background-color 0.2s ease, color 0.2s ease; /* Transição suave para cor de fundo e cor do texto. */
+    background-color: var(--primary-color); /* Cor de fundo. */
+    color: var(--secondary-color); /* Cor do texto. */
+    border: 1px solid var(--bg-color); /* Adiciona uma borda. */
+}
+
+#botao-busca:hover {
+    background-color: var(--primary-color); /* Muda a cor de fundo ao passar o mouse. */
+    color: var(--bg-color); /* Muda a cor do texto ao passar o mouse. */
+    box-shadow: 0 0 0 0.1rem var(--primary-color); /* Adiciona uma sombra de caixa. */
+}
+
+#botao-busca:active {
+    transform: scale(0.98); /* Efeito de clique (diminui o tamanho). */
+}
+
+/* --- Estilos da Seção Hero --- */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: calc(100vh - 88px); /* Altura da tela menos a altura aproximada do header */
+    padding: 0 2rem;
+    background: linear-gradient(180deg, rgba(26,32,44,0.2) 0%, var(--bg-color) 95%), url('JogosIndie.png                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ');
+    background-size: cover;
+    background-position: center center;
+}
+
+.hero-title {
+    font-family: 'Russo One', sans-serif;
+    font-size: 3.5rem;
+    color: var(--secondary-color);
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+    margin: 0;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--tertiary-color);
+    max-width: 600px;
+    margin: 1rem 0 2rem 0;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.hero-button {
+    font-family: 'Russo One', sans-serif;
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    padding: 0.8rem 2.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.hero-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(159, 122, 234, 0.5);
+}
+
+/* --- Estilos dos Filtros --- */
+.filters-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.5rem 2rem;
+    background-color: #232a3b; /* Um tom ligeiramente diferente para destacar */
+    border-bottom: 1px solid var(--border-color);
+    flex-wrap: wrap;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.filters-container label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--secondary-color);
+}
+
+.filters-container select,
+#famous-filter-btn,
+#sort-btn {
+    background-color: var(--bg-color);
+    color: var(--secondary-color);
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filters-container select:hover,
+#famous-filter-btn:hover,
+#sort-btn:hover {
+    border-color: var(--primary-color);
+    color: #FFFFFF;
+}
+
+#famous-filter-btn.active {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    border-color: var(--primary-color);
+}
+
+main {
+    flex: 1; /* Faz o conteúdo principal crescer para ocupar o espaço disponível */
+    max-width: 100rem; /* Aumenta a largura máxima para preencher mais a tela */
+    width: 95%;
+    margin: 0 auto; /* Centraliza o conteúdo principal horizontalmente. */
+    padding-top: 2rem; /* Margem no topo. */
+}
+
+/* Novo layout em grade para os cards */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Cria uma grade responsiva */
+    gap: 2rem; /* Espaçamento entre os cards */
+}
+
+article {
+    background: #232a3b; /* Fundo para o card */
+    border-radius: 12px; /* Bordas arredondadas */
+    overflow: hidden; /* Garante que a imagem não vaze das bordas */
+    display: flex;
+    flex-direction: column; /* Organiza o conteúdo em coluna */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+article:hover {
+    transform: translateY(-5px) scale(1.02); /* Efeito de elevação */
+    cursor: pointer; /* Muda o cursor para uma mão. */
+    box-shadow: 0 8px 16px rgba(159, 122, 234, 0.2);
+}
+
+article img {
+    width: 100%;
+    height: 180px; /* Altura aumentada para dar mais destaque */
+    object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+}
+
+.card-content {
+    flex: 1;
+    padding: 1rem; /* Espaçamento interno para o conteúdo */
+    display: flex;
+    flex-direction: column;
+}
+
+article h2 {
+    margin-top: 0; /* Remove a margem superior. */
+    font-weight: 600; /* Peso da fonte. */
+    font-size: 1.6rem; /* Tamanho da fonte. */
+    border-bottom: none; /* Sem borda inferior. */
+    padding-bottom: 0; /* Sem espaçamento interno inferior. */
+    font-family: 'Russo One', sans-serif; /* Fonte especial para títulos. */
+    margin-bottom: 0.25rem; /* Margem inferior. */
+    color: var(--primary-color); /* Cor do texto. */
+}
+
+article p {
+    flex-grow: 1; /* Faz a descrição ocupar o espaço disponível */
+    margin: 0.5rem 0 1rem 0; /* Margem superior e inferior. */
+    line-height: 1.6; /* Altura da linha para melhor legibilidade. */
+    font-size: 1rem; /* Tamanho da fonte. */
+    color: var(--secondary-color); /* Cor do texto. */
+    -webkit-line-clamp: 3; /* Limita a descrição a 3 linhas */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    display: -webkit-box;
+}
+
+article p strong {
+    color: var(--tertiary-color); /* Cor do texto em negrito. */
+    font-weight: 400; /* Peso da fonte. */
+}
+
+article a {
+    color: var(--primary-color); /* Cor do link. */
+    text-decoration: none; /* Remove o sublinhado padrão. */
+    font-weight: 200; /* Peso da fonte. */
+}
+
+.card-links {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+article a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse. */
+}
+
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.download-btn:hover {
+    background-color: var(--secondary-color);
+    text-decoration: none;
+    transform: scale(1.05);
+}
+.steam-logo {
+    width: 16px;
+    height: 16px;
+    fill: var(--bg-color);
+    transition: fill 0.2s ease;
+}
+
+/* --- Estilos da Seção de Preços --- */
+.prices-section {
+    margin-top: auto; /* Empurra a seção de preços para o final do card */
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.prices-section h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--tertiary-color);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center; /* Garante a centralização do título */
+}
+
+.price-entry {
+    display: flex;
+    flex-wrap: wrap; /* Permite que o conteúdo quebre a linha */
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    border-bottom: 1px dashed var(--border-color); /* Linha tracejada para separar melhor */
+    transition: all 0.2s ease;
+    color: var(--tertiary-color); /* Suaviza a cor das outras ofertas */
+}
+
+.price-store {
+    color: var(--secondary-color); /* Mantém o nome da loja mais visível */
+    font-weight: 600;
+}
+
+.price-value {
+    text-align: right;
+    flex-shrink: 0; /* Impede que o preço encolha */
+    font-weight: 500;
+}
+
+.price-value .original-price {
+    text-decoration: line-through;
+    color: var(--tertiary-color);
+    font-size: 0.8rem;
+    margin-right: 0.5rem;
+}
+
+.price-value .promo-price {
+    font-weight: 700;
+    color: #48bb78; /* Verde para promoções */
+    font-size: 1.1rem;
+}
+
+/* Botão "Ver na Loja" - Estilo Nuuvem */
+.view-offer-button {
+    background-color: transparent;
+    color: var(--secondary-color);
+    border: 1px solid var(--border-color);
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+/* Efeito de Hover na linha de preço */
+.price-entry:hover {
+    background-color: var(--border-color);
+    border-radius: 8px;
+}
+
+.price-entry:hover .view-offer-button {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    border-color: var(--primary-color);
+    transform: scale(1.05);
+}
+
+/* Estilo do contador de promoção */
+.promo-timer {
+    width: 100%;
+    font-size: 0.8rem;
+    color: #f6ad55; /* Laranja para o tempo restante */
+    text-align: right;
+    margin-top: 0.25rem;
+}
+
+/* Estilo para a melhor oferta */
+.price-entry.cheapest {
+    border: 1px solid rgba(159, 122, 234, 0.5); /* Borda roxa sutil */
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    margin-top: 0.5rem;
+    color: var(--secondary-color); /* Garante que o texto seja bem legível */
+}
+
+.price-entry.cheapest .price-store {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.price-entry.cheapest .promo-price {
+    font-size: 1.3rem; /* Aumenta o tamanho do preço na melhor oferta */
+}
+
+.price-entry.cheapest .view-offer-button {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    border-color: var(--primary-color);
+}
+
+/* --- Estilos do Modal --- */
+.hidden {
+    display: none !important; /* Garante que o elemento fique escondido */
+}
+
+#modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo preto semi-transparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Garante que o modal fique na frente de tudo */
+}
+
+#modal-content {
+    background-color: var(--bg-color);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+#modal-close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: var(--secondary-color);
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.modal-header {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-top: 0;
+    font-family: 'Russo One', sans-serif; /* Fonte especial para títulos. */
+    margin-bottom: 1rem;
+}
+
+.modal-body p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Proporção 16:9 para o vídeo */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+    border-radius: 8px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Fim dos Estilos do Modal */
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que o conteúdo quebre em telas pequenas */
+    gap: 1rem; /* Espaço entre os elementos caso eles quebrem a linha */
+    width: 100%; /* Largura total. */
+    color: var(--tertiary-color); /* Cor do texto. */
+    background-color: var(--bg-color); /* Cor de fundo. */
+    padding: 1.5rem 2rem; /* Espaçamento interno. */
+    border-top: 1px solid var(--border-color); /* Borda superior. */
+    font-size: 0.8rem; /* Tamanho da fonte. */
+}
+
+.footer-location {
+    color: var(--tertiary-color); /* Cor do texto. */
+}
+
+.footer-links {
+    padding: 0;
+    margin: 0;
+    list-style: none; /* Remove os marcadores da lista. */
+    display: flex; /* Habilita o layout flexbox. */
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha. */
+    gap: 15px; /* Espaçamento entre os links. */
+}
+
+.footer-links a {
+    color: var(--secondary-color); /* Cor do link. */
+    text-decoration: none; /* Remove o sublinhado. */
+    transition: color 0.2s; /* Transição suave para a cor. */
+}
+.footer-links a:hover {
+    color: var(--primary-color); /* Muda a cor do link ao passar o mouse. */
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Organiza os itens do cabeçalho em coluna. */
+        padding: 1.5rem 1rem; /* Ajusta o espaçamento interno. */
+        position: static; /* Remove o 'sticky' para evitar problemas de layout em alguns navegadores móveis */
+    }
+
+    header h1 {
+        text-align: center; /* Centraliza o texto. */
+        margin-bottom: 1rem; /* Adiciona margem inferior. */
+        font-size: 1.5rem; /* Reduz o tamanho da fonte do título para telas menores */
+    }
+
+    header .search-container {
+        max-width: 100%; /* Permite que a busca ocupe toda a largura */
+    }
+
+    header .search-container input {
+        font-size: 1.2rem; /* Reduz o tamanho da fonte. */
+    }
+
+    main {
+        width: 100%; /* Ocupa a largura total em telas menores */
+        padding: 0 1rem; /* Adiciona espaçamento lateral para o conteúdo não colar nas bordas */
+    }
+
+    article:hover {
+        transform: none; /* Remove o efeito de hover em dispositivos de toque. */
+    }
+}
+@media (max-width: 768px) {
+    .hero-section {
+        height: calc(100vh - 158px); /* Ajusta altura para header em coluna */
+        background-position: center 30%;
+    }
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    .filters-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    article {
+        flex-direction: column; /* Empilha a imagem sobre o conteúdo */
+    }
+    header h1 { font-size: 1.2rem; } /* Ajusta o tamanho da fonte do h1 para telas muito pequenas */
+
+    article img {
+        height: 180px; /* Aumenta um pouco a imagem em telas pequenas */
+        align-self: auto;
+        max-width: 100%; /* Garante que a imagem não ultrapasse o container */
+        align-self: center; /* Centraliza a imagem dentro do card */
+    }
+
+    article h2 {
+        font-size: 1.4rem; /* Ajusta o tamanho da fonte. */
+    }
+
+    .footer { /* Estilos para o rodapé em telas muito pequenas. */
+        flex-direction: column; /* Empilha os elementos do rodapé */
+        gap: 1rem;
+        padding: 1.5rem;
+    }
+
+}

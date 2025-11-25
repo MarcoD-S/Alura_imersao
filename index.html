@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Catálogo de Jogos Indie</title>
+</head>
+<body>
+    <header>
+        <h1>CATÁLOGO DE JOGOS INDIE</h1>
+        <div class="search-container">
+            <input type="text" placeholder="Pesquisar por jogo...">
+            <button id="botao-busca" onclick="iniciarBusca()">Buscar</button>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <h2 class="hero-title">Explore o Universo Indie</h2>
+        <p class="hero-subtitle">Descubra joias escondidas e os jogos independentes mais aclamados em um só lugar.</p>
+        <a href="#catalogo" class="hero-button">Ver Catálogo</a>
+    </section>
+
+    <section class="filters-container">
+        <div class="filter-group">
+            <label for="category-filter">Filtrar por Categoria:</label>
+            <select id="category-filter">
+                <option value="todos">Todas as Categorias</option>
+                <!-- As categorias serão preenchidas dinamicamente pelo JavaScript -->
+            </select>
+        </div>
+        <button id="famous-filter-btn">⭐ Mais Famosos</button>
+        <button id="sort-btn">Ordem Padrão</button>
+    </section>
+
+    <main>
+        <!-- Adicionando o ID aqui para a rolagem funcionar -->
+        <section id="catalogo" class="card-container"> 
+            <!-- Exemplo de como o card deve ser gerado pelo seu script.js -->
+            <!-- <article class="card">
+                <img src="URL_DA_IMAGEM_AQUI" alt="Imagem do jogo">
+                <div class="card-content">
+                    <h2>Nome do Jogo</h2>
+                    <p>Descrição do Jogo</p>
+                    <a href="LINK_DO_JOGO" target="_blank">Saiba mais</a>
+                </div>
+            </article> -->
+        </section>
+    </main>
+
+    <div id="modal-overlay" class="hidden">
+        <div id="modal-content">
+            <button id="modal-close-btn">&times;</button>
+            <!-- O conteúdo do modal será injetado aqui pelo JavaScript -->
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-location">
+            Brasil
+        </div>
+        <ul class="footer-links">
+            <li>
+                <a href="https://github.com/MarcoD-S" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </li>
+            <li>
+                <a href="https://www.alura.com.br/" target="_blank" rel="noopener noreferrer">Alura</a>
+            </li>
+        </ul>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
