@@ -262,3 +262,15 @@ sortBtn.addEventListener('click', () => {
     sortBtn.textContent = `Ordem: ${sortStates[currentSortIndex]}`;
     aplicarFiltros();
 });
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+        navigator.serviceWorker
+            .register("./sw.js")
+            .then(() => {
+                console.log("PWA ativo!");
+            })
+            .catch(error => {
+                console.error("Erro ao registrar SW:", error);
+            });
+    });
+}
